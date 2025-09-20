@@ -36,15 +36,8 @@ for file in os.listdir(downloads):
         # 目標路徑
         dest = os.path.join(target, file)
 
-        # 如果檔案重名，自動加 _1, _2...
-        counter = 1
-        while os.path.exists(dest):
-            name, extension = os.path.splitext(file)
-            new_name = f"{name}_{counter}{extension}"
-            dest = os.path.join(target, new_name)
-            counter += 1
 
         # 移動檔案
         shutil.move(filepath, dest)
 
-print("✅ 下載資料夾已完成整理！")
+print("Done")
